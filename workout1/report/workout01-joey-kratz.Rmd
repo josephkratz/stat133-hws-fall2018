@@ -7,22 +7,44 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+```{r}
+library(ggplot2)
+library(readr)
+team_data <- read_csv(file="../data/nba2018-teams.csv")
+```
+#Basic Rankings
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+```{r}
+avg_team_salary <- mean(team_data$salary)
+ggplot(team_data, aes(x=reorder(team, salary), y=salary)) + geom_bar(stat="identity") + coord_flip() + geom_hline(yintercept=avg_team_salary, col="red", lwd=2, alpha=0.7) + labs(x="Team", y="Salary (in millions)", title="NBA Teams Ranked by Total Salary")
 ```
 
-## Including Plots
+```{r}
+avg_team_points <- mean(team_data$points)
+ggplot(team_data, aes(x=reorder(team, points), y=points)) + geom_bar(stat="identity") + coord_flip() + geom_hline(yintercept=avg_team_points, col="red", lwd=2, alpha=0.7) + labs(x="Team", y="Total Points", title="NBA Teams Ranked by Total Points")
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r}
+avg_team_eff <- mean(team_data$efficiency)
+ggplot(team_data, aes(x=reorder(team, efficiency), y=efficiency)) + geom_bar(stat="identity") + coord_flip() + geom_hline(yintercept=avg_team_eff, col="red", lwd=2, alpha=0.7) + labs(x="Team", y="Total Efficiency", title="NBA Teams Ranked by Total Efficiency")
+
+```
+
+```{r}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
