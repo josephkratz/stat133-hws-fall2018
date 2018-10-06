@@ -21,3 +21,15 @@ dat$position[dat$position=="PF"] = "power_fwd"
 dat$position[dat$position=="PG"] = "point_guard"
 dat$position[dat$position=="SF"] = "small_fwd"
 dat$position[dat$position=="SG"] = "shoot_guard"
+
+dat %>% mutate(missed_fg= field_goals_atts-field_goals)
+
+dat %>% mutate(missed_ft= points1_atts-points1)
+
+dat %>% mutate(rebounds= off_rebounds+def_rebounds)
+
+dat %>% mutate(efficiency=points+rebounds + assists + steals + blocks - missed_fg - missed_ft - turnovers) / games_played
+
+sink()
+
+
