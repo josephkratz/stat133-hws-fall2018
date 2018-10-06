@@ -1,0 +1,1 @@
+* In this workout we will be seeing if there are other ways to rank NBA teams. 
