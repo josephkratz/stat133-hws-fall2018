@@ -30,12 +30,10 @@ dat %>% mutate(rebounds= off_rebounds+def_rebounds)
 
 dat %>% mutate(efficiency=points+rebounds + assists + steals + blocks - missed_fg - missed_ft - turnovers) / games_played
 
-sink(file="Desktop/stat133-hws-fall2018/workout1/output/efficiency-summary.txt")
+sink(file="../output/efficiency-summary.txt") #we are in the /code directory
 summary(dat$efficiency)
 sink()
-# Because I was in the /user directory, this is the path I used above. 
-# If I was in the /code directory, my path would have looked like
-# file = "../output/efficiency-summary.txt"
+
 dat$experience <- as.integer(dat$experience)
 team <- count(dat, team)[, 1]
 experience <- summarise(group_by(dat, team), experience = sum(experience))[, 2]
@@ -57,12 +55,11 @@ teams <- data.frame(team, experience, salary, points3, points2, points1,
                     points, off_rebounds, def_rebounds, assists, steals,
                     blocks, turnovers, fouls, efficiency)
 
-sink(file="Desktop/stat133-hws-fall2018/workout1/output/teams-summary.txt")
+sink(file="../output/teams-summary.txt")#we are in the /code directory
 summary(teams)
 sink()
 
-write.csv(teams, file = "Desktop/stat133-hws-fall2018/workout1/data/nba2018-teams.csv", 
-          row.names = FALSE)
+write.csv(teams, file = "../data/nba2018-teams.csv", row.names = FALSE)#we are in the /code directory
 
 
 
