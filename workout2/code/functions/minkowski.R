@@ -8,24 +8,22 @@
 minkowski <- function(x, y, p=1) {
   if (length(x) != length(y)) {
     stop("x and y have different lengths")
-  } else if (is.numeric(p)) {
-    if (p < 1) {
-      stop("p cannot be less than 1")
+  } else if (is.numeric(p) & p < 1) {
+    stop("p cannot be less than 1")
+  } else if (is.character(p) & p != "max") {
+    stop("invalid character value for p")
+  } else if (p == "max") {
+    abs_xy_vec <- rep(0, length(x))
+    for (i in 1:length(x)) {
+      abs_xy_vec[i] <- abs(x[i] - y[i])
     }
-  } else if (is.character(p)) {
-    if (p != "max") {
-      stop("invalid character value for p")
-    }
+    value <- max(abs_xy_vec)
+    return(value)
   } else {
     abs_xy_vec <- rep(0, length(x))
     for (i in 1:length(x)) {
-    abs_xy_vec[i] <- abs(x[i] - y[i])
-    summation <- sum(abs_xy_vec)
-    if (p == "max") {
-      return(max(abs_xy_vec))
-    } else {
-      return(summation^(1/p))
+      abs_xy_vec[i] <- (abs(x[i] - y[i]))^p
     }
-    }
+    return(sum(abs_xy_vec)^(1/p))
   }
 }
