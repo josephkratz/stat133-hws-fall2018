@@ -12,7 +12,7 @@ is_hex <- function(x) {
     x <- tolower(x)
     if (substr(x, 1, 1) != "#") {
       return(FALSE)
-    } else if (str_detect(x, "[0123456789ghijklmnopqrstuvwxyz]")) {
+    } else if (str_detect(x, "[ghijklmnopqrstuvwxyz]")) {
       return(FALSE)
     } else {
       return(TRUE)
@@ -34,7 +34,7 @@ is_hex_alpha <- function(x) {
     x <- tolower(x)
     if (substr(x, 1, 1) != "#") {
       return(FALSE)
-    } else if (str_detect(x, "[0123456789ghijklmnopqrstuvwxyz]")) {
+    } else if (str_detect(x, "[ghijklmnopqrstuvwxyz]")) {
       return(FALSE)
     } else {
       return(TRUE)
