@@ -9,6 +9,8 @@ count_vowels <- function(x) {
   } else {
   x <- tolower(strsplit(x, "")[[1]])
   x <- x[x %in% letters]
-  return(table(x)[c("a", "e", "i", "o", "u")])
+  vowel_table <- table(x)[c("a", "e", "i", "o", "u")]
+  counts <- as.double(as.vector(vowel_table))
+  return(c("a"=counts[1], "e"=counts[2], "i"=counts[3], "o"=counts[4], "u"=counts[5]))
   }
 }
