@@ -6,7 +6,7 @@
 is_hex <- function(x) {
   if (!is.character(x)) {
     stop("invalid input; a string was expected")
-  } else if (nchar(x) != 6) {
+  } else if (nchar(x) != 7) {
     return(FALSE)
   } else {
     x <- tolower(x)
@@ -28,7 +28,7 @@ is_hex <- function(x) {
 is_hex_alpha <- function(x) {
   if (!is.character(x)) {
     stop("invalid input; a string was expected")
-  } else if (nchar(x) != 6 | nchar(x) != 8) {
+  } else if (nchar(x) != 9) {
     return(FALSE)
   } else {
     x <- tolower(x)

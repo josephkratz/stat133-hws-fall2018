@@ -4,7 +4,7 @@
 #' @return string value with characters reversed (character)
 
 reverse_chars <- function(x) {
-  split <- strplit(x, NULL)[[1]]
+  split <- strsplit(x, NULL)[[1]]
   reversed <- rev(split)
   return(paste(reversed, collapse = ''))
 }
