@@ -9,9 +9,9 @@
 #' device1 <- device()
 #' 
 #' # another device
-#' coin <- device(c('heads', 'tails'))
+#' device <- device(c('heads', 'tails'))
 #' 
-#' # loaded coin
+#' # loaded device
 #' loaded <- device(prob = c(0.7, 0.3))
 #' 
 
@@ -21,10 +21,12 @@ device <- function(sides = c(1, 2), prob = c(0.5, 0.5)) {
   
   object <- list(
     sides = sides,
-    prob = prob)
+    prob = prob,
+    dframe = data.frame(sides, prob))
   class(object) <- "device"
   object
 }
+
 check_sides <- function(sides) {
   if (length(sides) < 2) {
     stop("\n'sides' must be a vector of length at least 2")
@@ -37,6 +39,7 @@ check_sides <- function(sides) {
   }
   TRUE
 }
+
 check_prob <- function(prob) {
   if (length(prob) < 2 | !is.numeric(prob)) {
     stop("\n'prob' must be a numeric vector of length at least 2")
@@ -51,4 +54,18 @@ check_prob <- function(prob) {
     stop("\nelements in 'prob' must add up to 1")
   }
   TRUE
+}
+
+#' @export
+print.device <- function(x, ...) {
+  cat('object "device"\n\n')
+  print(x$dframe)
+  invisible(x)
+}
+
+#' @rdname device
+#' @param x an R object
+#' @export
+is.device <- function(x) {
+  is(x, "device")
 }
