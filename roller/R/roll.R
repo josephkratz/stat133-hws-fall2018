@@ -41,7 +41,7 @@ lets_roll <- function(device, results) {
   lst
 }
 
-print.roll <- function(x, ...) {
+print.rolls <- function(x, ...) {
   cat('object "rolls"\n\n')
   cat("$rolls\n")
   cat(x$rolls, "\n")
