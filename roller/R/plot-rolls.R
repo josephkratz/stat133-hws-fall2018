@@ -12,7 +12,9 @@
 #'  plot(roll40)
 #'
 
-plot.rolls <- function(x, ...) {
+# plotting method
+
+plot.roll <- function(x, ...) {
   props <- rep(0, length(x$sides))
   for (i in 1:length(props)) {
     props[i] <- sum(x$rolls == x$sides[i]) / x$total

@@ -14,6 +14,7 @@
 #' # roll a device 10 times
 #' roll_10 <- roll(dev1, times = 10)
 #' 
+
 roll <- function(device, times = 1) {
   if (!is.device(device)) {
     stop("\nojbect must be of device class")
@@ -34,15 +35,16 @@ check_times <- function(times) {
 lets_roll <- function(device, results) {
   lst <- list(
     rolls = results,
+    device = device,
     sides = device$sides,
     prob = device$prob,
     total = length(results))
-  class(lst) <- "rolls"
+  class(lst) <- "roll"
   lst
 }
 
-print.rolls <- function(x, ...) {
-  cat('object "rolls"\n\n')
+print.roll <- function(x, ...) {
+  cat('object "roll"\n\n')
   cat("$rolls\n")
   cat(x$rolls, "\n")
   invisible(x)
@@ -50,7 +52,7 @@ print.rolls <- function(x, ...) {
 
 #now onto summary methods...
 
-summary.rolls <- function(x, ...) {
+summary.roll <- function(x, ...) {
   props <- rep(0, length(x$sides))
   for (i in 1:length(props)) {
     props[i] <- sum(x$rolls == x$sides[i]) / x$total
@@ -65,14 +67,40 @@ summary.rolls <- function(x, ...) {
     count = counts,
     prop = props)
   obj <- list(freqs=dframe)
-  class(obj) <- "summary.rolls"
+  class(obj) <- "summary.roll"
   obj
 }
 
-print.summary.rolls <- function(x, ...) {
+print.summary.roll <- function(x, ...) {
   cat('summary "rolls"\n\n')
   print(x$freqs)
   invisible(x)
 }
 
+# additional methods...
 
+# finding value through indexing
+"[.roll" <- function(x, i) {
+  x$rolls[i]
+}
+
+#replacing a value through indexing
+"[<-.roll" <- function(x, i, value) {
+  if (!(value %in% x$sides)) {
+    stop("\nreplacement value must match a side on the device")
+  }
+  if (i > length(x$rolls)) {
+    stop("\nindex must be within bounds")
+  }
+  x$rolls[i] <- value
+  lets_roll(x$device, x$rolls)
+}
+
+# adding additional rolls
+"+.roll" <- function(x, n) {
+  if (n <= 0) {
+    stop("\nyou need to add a positive amount of rolls >0")
+  }
+  add_rolls <- roll(x$device, n)
+  lets_roll(device$x, c(x$rolls, add_rolls))
+}
