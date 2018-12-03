@@ -1,5 +1,10 @@
 context("Check device arguments")
 
+testthat("device has correct output", {
+
+  expect_true(is.list(device()))
+})
+
 test_that("check_sides with ok vectors", {
 
   expect_true(check_sides(c('h', 't')))
