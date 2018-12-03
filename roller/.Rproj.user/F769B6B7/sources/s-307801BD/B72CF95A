@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2091129970",
+    "hash" : "0",
     "id" : "B72CF95A",
     "lastKnownWriteTime" : 1543811092,
     "last_content_update" : 1543811092606,
     "path" : "~/Desktop/stat133-hws-fall2018/roller/vignettes/introduction.Rmd",
     "project_path" : "vignettes/introduction.Rmd",
     "properties" : {
-        "cursorPosition" : "34,6",
-        "scrollLine" : "41"
+        "cursorPosition" : "53,15",
+        "scrollLine" : "45"
     },
     "relative_order" : 9,
     "source_on_save" : false,
