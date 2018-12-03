@@ -25,8 +25,10 @@ roll <- function(device, times = 1) {
 }
 
 check_times <- function(times) {
-  if (times <= 0 | !is.numeric(times)) {
-    stop("\nargument 'times' must be a positive integer")
+  if (times < 1 | !is.numeric(times)) {
+    stop("\nargument 'times' must be >= 1")
+  } else if (times %% 1 != 0) {
+    stop("\n'times' must be a wholenumber")
   } else {
     TRUE
   }
