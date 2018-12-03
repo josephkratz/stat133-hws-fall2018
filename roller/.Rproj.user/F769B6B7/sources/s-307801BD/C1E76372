@@ -5,13 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "1384693205",
     "id" : "C1E76372",
-    "lastKnownWriteTime" : 1543813943,
-    "last_content_update" : 1543813943,
+    "lastKnownWriteTime" : 1543814180,
+    "last_content_update" : 1543814180740,
     "path" : "~/Desktop/stat133-hws-fall2018/workout3/report.Rmd",
     "project_path" : null,
     "properties" : {
+        "cursorPosition" : "54,0",
+        "scrollLine" : "0"
     },
     "relative_order" : 11,
     "source_on_save" : false,
