@@ -1,11 +1,10 @@
 Package: roller
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Simulates Rolling a device ()
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Joey Kratz
+Maintainer: Joey Kratz <josephkratz@berkeley.edu>
+Description: Functions to create a device object, to rolls the device multiple times (the device can have n>=2 sides with different probabilities summing to 1), and summarizes and visualizes the frequencies of the rolls
+License: GPL-2
 Encoding: UTF-8
 LazyData: true
