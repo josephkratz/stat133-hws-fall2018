@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1543810738188.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "8C1BE481",
+    "lastKnownWriteTime" : 1543810835,
+    "last_content_update" : 1543810835481,
+    "path" : "~/Desktop/stat133-hws-fall2018/roller/tests/testthat/test-device.R",
+    "project_path" : "tests/testthat/test-device.R",
+    "properties" : {
+        "cursorPosition" : "0,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

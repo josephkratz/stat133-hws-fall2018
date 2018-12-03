@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1543810730476.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1594317536",
+    "id" : "8C342DAF",
+    "lastKnownWriteTime" : 1543801774,
+    "last_content_update" : 1543801774,
+    "path" : "~/Desktop/stat133-hws-fall2018/roller/tests/testthat.R",
+    "project_path" : "tests/testthat.R",
+    "properties" : {
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
