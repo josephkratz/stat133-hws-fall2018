@@ -15,9 +15,9 @@ device1
 ```
   ##> object "device"
   ##>
-  ##> sides prob
-  ##> 1     0.5
-  ##> 2     0.5
+  ##>   sides prob
+  ##> 1 1     0.5
+  ##> 2 2     0.5
 ```
 By default, `device()` creates a _fair_ coin with standard sides `1`, and 
 `2`, and with probability values for each side of 0.5.
@@ -28,7 +28,13 @@ You can change the defatuls with arguments `sides` and `prob`:
 loaded <- device(sides = c('three', 'two'), prob = c(3/5, 2/5))
 loaded
 ```
-
+```
+  ##> object "device"
+  ##>
+  ##>   sides prob
+  ##> 1 three 0.6
+  ##> 2 two   0.4
+```
 
 ## Rolling a device
 
@@ -40,12 +46,24 @@ _roll_ a device a given number of `times`. The output will be an object of class
 roll50 <- roll(device1, times = 50)
 roll50
 ```
+```
+  ##> object "roll"
+  ##> 
+  ##> $rolls
+  ##> 2 1 2 1 1 1 2 1 1 1 1 2 1 2 1 2 1 2 1 2 1 2 2 2 2 1 1 1 1 1 2 1 1 2 1 2 1 1 1 2 1 1 1 1 2 1 1 1 1 2
+```
 
 The `summary()` function gives you a nice table of frequencies:
 ```{r}
 summary(roll50)
 ```
-
+```
+  ##> summary "rolls"
+  ##>
+  ##>   side  count prop
+  ##> 1    1     32 0.64
+  ##> 2    2     18 0.36
+```
 
 ## Plotting relative frequencies
 
@@ -55,3 +73,5 @@ frequencies of a series of rolls:
 ```{r, fig.show='hold'}
 plot(roll50)
 ```
+
+![](report-images/image1.png)<!-- -->
