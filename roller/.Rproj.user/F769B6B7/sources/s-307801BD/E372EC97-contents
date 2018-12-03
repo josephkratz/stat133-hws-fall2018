@@ -12,12 +12,13 @@ The first step is to create a `"device"` object with the function `device()`:
 device1 <- device()
 device1
 ```
+```
   ##> object "device"
   ##>
   ##> sides prob
   ##> 1     0.5
   ##> 2     0.5
-
+```
 By default, `device()` creates a _fair_ coin with standard sides `1`, and 
 `2`, and with probability values for each side of 0.5.
 
