@@ -10,10 +10,10 @@
 #' @export
 #' @examples
 #' dev1 <- device()
-#' 
+#'
 #' # roll a device 10 times
 #' roll_10 <- roll(dev1, times = 10)
-#' 
+#'
 
 roll <- function(device, times = 1) {
   if (!is.device(device)) {
@@ -43,6 +43,7 @@ lets_roll <- function(device, results) {
   lst
 }
 
+#' @export
 print.roll <- function(x, ...) {
   cat('object "roll"\n\n')
   cat("$rolls\n")
@@ -52,6 +53,7 @@ print.roll <- function(x, ...) {
 
 #now onto summary methods...
 
+#' @export
 summary.roll <- function(x, ...) {
   props <- rep(0, length(x$sides))
   for (i in 1:length(props)) {
@@ -61,7 +63,7 @@ summary.roll <- function(x, ...) {
   for (i in 1:length(counts)) {
     counts[i] <- sum(x$rolls == x$sides[i])
   }
-  
+
   dframe <- data.frame(
     side = x$sides,
     count = counts,
@@ -71,6 +73,7 @@ summary.roll <- function(x, ...) {
   obj
 }
 
+#' @export
 print.summary.roll <- function(x, ...) {
   cat('summary "rolls"\n\n')
   print(x$freqs)
@@ -79,11 +82,13 @@ print.summary.roll <- function(x, ...) {
 
 # additional methods...
 
+#' @export
 # finding value through indexing
 "[.roll" <- function(x, i) {
   x$rolls[i]
 }
 
+#' @export
 #replacing a value through indexing
 "[<-.roll" <- function(x, i, value) {
   if (!(value %in% x$sides)) {
@@ -96,6 +101,7 @@ print.summary.roll <- function(x, ...) {
   lets_roll(x$device, x$rolls)
 }
 
+#' @export
 # adding additional rolls
 "+.roll" <- function(x, n) {
   if (n <= 0) {
