@@ -1,18 +1,4 @@
----
-title: "Getting Started with roller"
-author: "Joey Kratz"
-date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{Introduction to roller}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
----
-
-```{r, echo = FALSE, message = FALSE}
-knitr::opts_chunk$set(collapse = T, comment = "#>")
-library(roller)
-```
+### How to Use Roller Package
 
 ## Device Rolling
 
